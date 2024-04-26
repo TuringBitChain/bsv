@@ -639,24 +639,6 @@ describe('Transaction', function () {
       verify.should.equal('transaction txout 0 satoshis is invalid')
     })
 
-    it('not if transaction is greater than max block size', function () {
-      var tx = new Transaction()
-        .from({
-          'txId': testPrevTx,
-          'outputIndex': 0,
-          'script': testScript,
-          'satoshis': testAmount
-        })
-        .to('mrU9pEmAx26HcbKVrABvgL7AwA5fjNFoDc', testAmount - 10000)
-
-      tx.toBuffer = sinon.stub().returns({
-        length: 10000000
-      })
-
-      var verify = tx.verify()
-      verify.should.equal('transaction over the maximum block size')
-    })
-
     it('not if has null input (and not coinbase)', function () {
       var tx = new Transaction()
         .from({

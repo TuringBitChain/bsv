@@ -279,7 +279,7 @@ describe('BIP32 compliance', function () {
         // On the fourth call to the function give back an invalid private key
         // otherwise use the normal behavior.
         count++
-        if (count === 4) {
+        if (count === 2) {
           return invalid
         }
         var ret = unstubbed.apply(this, arguments)

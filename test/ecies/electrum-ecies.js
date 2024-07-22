@@ -1,10 +1,9 @@
 'use strict'
 
-var ECIES = require('../../lib/ecies/electrum-ecies')
-
 var should = require('chai').should()
 var bsv = require('../../')
 var PrivateKey = bsv.PrivateKey
+var ECIES = bsv.ECIES
 
 var aliceKey = new PrivateKey('L1Ejc5dAigm5XrM3mNptMEsNnHzS7s51YxU7J61ewGshZTKkbmzJ')
 var bobKey = new PrivateKey('KxfxrUXSMjJQcb3JgnaaA6MqsrKQ1nBSxvhuigdKRyFiEm6BZDgG')

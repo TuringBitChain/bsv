@@ -68,5 +68,9 @@ bsv.deps._ = require('./lib/util/_')
 // Internal usage, exposed for testing/advanced tweaking
 bsv.Transaction.sighash = require('./lib/transaction/sighash')
 
+bsv.Message = require('./lib/message/message')
+bsv.Mnemonic = require('./lib/mnemonic/mnemonic')
+
+
 module.exports = bsv
 export default bsv

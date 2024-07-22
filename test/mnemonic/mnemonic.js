@@ -2,8 +2,8 @@
 
 var chai = require('chai')
 var should = chai.should()
-
-var Mnemonic = require('../../lib/mnemonic')
+var bsv = require('../../')
+var Mnemonic = bsv.Mnemonic
 var errors = require('../../').errors
 var bip39vectors = require('./data/fixtures.json')
 

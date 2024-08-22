@@ -1,25 +1,28 @@
 {
-  "name": "bsv",
-  "version": "1.5.6",
+  "name": "@scrypt-inc/bsv",
+  "version": "1.0.0",
   "description": "A pure and powerful JavaScript Bitcoin SV (BSV) library.",
-  "author": "Ryan X. Charles <ryan@moneybutton.com>",
-  "ide": true,
-  "main": "index.js",
+  "author": "sCrypt.Inc",
+  "source": "./index.js",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "browser": "dist/browser.js",
+  "types": "./index.d.ts",
   "scripts": {
     "lint": "standard --fix",
-    "dev": "mocha -g 'Address' ",
+    "build": "parcel build --no-cache",
+    "dev": "mocha -g 'BIP32' ",
     "test": "standard && mocha",
     "coverage": "nyc --reporter=text npm run test",
-    "build-bsv": "webpack index.js --config webpack.config.js",
-    "build-ecies": "webpack ecies/index.js --config webpack.subproject.config.js --output-library bsvEcies -o bsv-ecies.min.js",
-    "build-message": "webpack message/index.js --config webpack.subproject.config.js --output-library bsvMessage -o bsv-message.min.js",
-    "build-mnemonic": "webpack mnemonic/index.js --config webpack.subproject.config.js --output-library bsvMnemonic -o bsv-mnemonic.min.js",
-    "build": "yarn build-bsv && yarn build-ecies && yarn build-message && yarn build-mnemonic",
     "prepublishOnly": "yarn build"
   },
-  "unpkg": "bsv.min.js",
+  "targets": {
+    "types": false
+  },
   "keywords": [
     "bitcoin",
+    "bsv",
+    "scrypt",
     "transaction",
     "address",
     "p2p",
@@ -36,15 +39,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/moneybutton/bsv"
-  },
-  "browser": {
-    "request": "browser-request"
+    "url": "https://github.com/sCrypt-Inc/bsv"
   },
   "dependencies": {
     "aes-js": "^3.1.2",
+    "assert": "^2.1.0",
     "bn.js": "=4.11.9",
     "bs58": "=4.0.1",
+    "buffer": "^6.0.3",
     "clone-deep": "^4.0.1",
     "elliptic": "6.5.4",
     "hash.js": "^1.1.7",
@@ -56,10 +58,9 @@
     "chai": "4.2.0",
     "mocha": "^8.4.0",
     "nyc": "^14.1.1",
+    "parcel": "latest",
     "sinon": "7.2.3",
-    "standard": "12.0.1",
-    "webpack": "4.29.3",
-    "webpack-cli": "^3.3.12"
+    "standard": "12.0.1"
   },
   "license": "MIT",
   "standard": {

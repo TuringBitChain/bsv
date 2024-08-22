@@ -1,6 +1,6 @@
 'use strict'
 
-var bsv = module.exports
+var bsv = {}
 
 // module information
 bsv.version = 'v' + require('./package.json').version
@@ -13,8 +13,8 @@ bsv.versionGuard = function (version) {
     console.warn(message)
   }
 }
-bsv.versionGuard(global._bsv)
-global._bsv = bsv.version
+bsv.versionGuard(global._scrypt_bsv)
+global._scrypt_bsv = bsv.version
 
 // crypto
 bsv.crypto = {}
@@ -67,3 +67,9 @@ bsv.deps._ = require('./lib/util/_')
 
 // Internal usage, exposed for testing/advanced tweaking
 bsv.Transaction.sighash = require('./lib/transaction/sighash')
+
+bsv.Message = require('./lib/message/message')
+bsv.Mnemonic = require('./lib/mnemonic/mnemonic')
+
+module.exports = bsv
+export default bsv

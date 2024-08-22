@@ -8,7 +8,7 @@ var bsv = require('../../')
 var Address = bsv.Address
 var Signature = bsv.crypto.Signature
 var PrivateKey = bsv.PrivateKey
-var Message = require('../../lib/message')
+var Message = bsv.Message
 
 describe('Message', function () {
   var address = 'n1ZCYg9YXtB5XCZazLxSmPDa8iwJRZHhGx'

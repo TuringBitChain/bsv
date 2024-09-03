@@ -10,7 +10,7 @@
 
 /// <reference types="node" />
 
-declare module '@scrypt-inc/bsv' {
+declare module '@TuringBitChain/bsv' {
     /**
      * Opcode class, representing opcodes used in Bitcoin Script
      * @constructor
